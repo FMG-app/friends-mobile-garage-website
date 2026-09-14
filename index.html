@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Friends Mobile Garage | Mobiles & Accessories</title>
+    <meta name="description" content="Friends Mobile Garage - Shop mobiles, mobile accessories and reliable mobile services.">
+    <meta name="keywords" content="mobile phones, mobile accessories, chargers, cables, earbuds, headphones, power banks, mobile service">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f7fa;
+            color: #172033;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .topbar {
+            background: #172033;
+            color: white;
+            text-align: center;
+            padding: 9px 15px;
+            font-size: 14px;
+        }
+
+        header {
+            background: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 12px rgba(0,0,0,.08);
+        }
+
+        .nav {
+            max-width: 1200px;
+            margin: auto;
+            min-height: 74px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: #172033;
+        }
+
+        .logo span {
+            color: #1769e0;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            font-size: 15px;
+            font-weight: 600;
+            transition: .2s;
+        }
+
+        .nav-links a:hover {
+            color: #1769e0;
+        }
+
+        .menu-btn {
+            display: none;
+            border: 0;
+            background: transparent;
+            font-size: 28px;
+            cursor: pointer;
+        }
+
+        .hero {
+            min-height: 570px;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, #172033, #263b63);
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            width: 100%;
+            margin: auto;
+            padding: 75px 20px;
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(255,255,255,.12);
+            border: 1px solid rgba(255,255,255,.2);
+            padding: 8px 14px;
+            border-radius: 30px;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+
+        .hero h1 {
+            font-size: clamp(38px, 6vw, 68px);
+            line-height: 1.08;
+            max-width: 750px;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: #62a5ff;
+        }
+
+        .hero p {
+            max-width: 650px;
+            color: #dce5f5;
+            font-size: 18px;
+            margin-bottom: 32px;
+        }
+
+        .buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 13px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 13px 22px;
+            border-radius: 8px;
+            font-weight: 700;
+            border: 1px solid transparent;
+        }
+
+        .btn-primary {
+            background: white;
+            color: #172033;
+        }
+
+        .btn-secondary {
+            border-color: rgba(255,255,255,.45);
+            color: white;
+        }
+
+        .section {
+            max-width: 1200px;
+            margin: auto;
+            padding: 75px 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 42px;
+        }
+
+        .section-title h2 {
+            font-size: 34px;
+            margin-bottom: 8px;
+        }
+
+        .section-title p {
+            color: #667085;
+        }
+
+        .categories {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+        }
+
+        .category {
+            background: white;
+            padding: 28px 20px;
+            text-align: center;
+            border-radius: 14px;
+            box-shadow: 0 5px 20px rgba(20,40,70,.07);
+            transition: transform .2s, box-shadow .2s;
+        }
+
+        .category:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 28px rgba(20,40,70,.12);
+        }
+
+        .category-icon {
+            font-size: 40px;
+            margin-bottom: 12px;
+        }
+
+        .category h3 {
+            margin-bottom: 6px;
+        }
+
+        .category p {
+            color: #667085;
+            font-size: 14px;
+        }
+
+        .about {
+            background: white;
+        }
+
+        .about-grid {
+            max-width: 1200px;
+            margin: auto;
+            padding: 75px 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 55px;
+            align-items: center;
+        }
+
+        .about h2 {
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+
+        .about p {
+            color: #667085;
+            margin-bottom: 15px;
+        }
+
+        .feature-list {
+            margin-top: 20px;
+            display: grid;
+            gap: 12px;
+        }
+
+        .feature {
+            background: #f5f7fa;
+            padding: 13px 16px;
+            border-radius: 8px;
+            font-weight: 600;
+        }
+
+        .about-card {
+            min-height: 330px;
+            border-radius: 18px;
+            background: linear-gradient(145deg, #eaf2ff, #ffffff);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 35px;
+        }
+
+        .about-card strong {
+            display: block;
+            font-size: 72px;
+            margin-bottom: 10px;
+        }
+
+        .services {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .service {
+            background: white;
+            padding: 30px;
+            border-radius: 14px;
+            box-shadow: 0 5px 20px rgba(20,40,70,.07);
+        }
+
+        .service-icon {
+            font-size: 36px;
+            margin-bottom: 14px;
+        }
+
+        .service h3 {
+            margin-bottom: 8px;
+        }
+
+        .service p {
+            color: #667085;
+            font-size: 15px;
+        }
+
+        .cta {
+            background: #172033;
+            color: white;
+            text-align: center;
+        }
+
+        .cta-inner {
+            max-width: 850px;
+            margin: auto;
+            padding: 75px 20px;
+        }
+
+        .cta h2 {
+            font-size: 36px;
+            margin-bottom: 12px;
+        }
+
+        .cta p {
+            color: #dce5f5;
+            margin-bottom: 25px;
+        }
+
+        .contact {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .contact-card {
+            background: white;
+            padding: 30px;
+            border-radius: 14px;
+            box-shadow: 0 5px 20px rgba(20,40,70,.07);
+        }
+
+        .contact-card h3 {
+            margin-bottom: 15px;
+        }
+
+        .contact-item {
+            padding: 10px 0;
+            border-bottom: 1px solid #edf0f4;
+        }
+
+        .contact-item:last-child {
+            border-bottom: 0;
+        }
+
+        footer {
+            background: #0e1524;
+            color: #cbd5e1;
+            padding: 40px 20px 20px;
+        }
+
+        .footer-grid {
+            max-width: 1200px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr;
+            gap: 35px;
+        }
+
+        footer h3,
+        footer h4 {
+            color: white;
+            margin-bottom: 12px;
+        }
+
+        footer p,
+        footer a {
+            font-size: 14px;
+            color: #aeb9ca;
+        }
+
+        footer a:hover {
+            color: white;
+        }
+
+        .footer-links {
+            display: grid;
+            gap: 7px;
+        }
+
+        .copyright {
+            max-width: 1200px;
+            margin: 30px auto 0;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,.1);
+            text-align: center;
+            font-size: 13px;
+            color: #8e9aad;
+        }
+
+        @media (max-width: 850px) {
+            .menu-btn {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 74px;
+                left: 0;
+                right: 0;
+                background: white;
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 8px 15px rgba(0,0,0,.08);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .categories {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .about-grid,
+            .contact {
+                grid-template-columns: 1fr;
+            }
+
+            .services {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 520px) {
+            .categories {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                min-height: 520px;
+            }
+
+            .section {
+                padding: 55px 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="topbar">
+    Welcome to Friends Mobile Garage — Mobiles, Accessories & Services
+</div>
+
+<header>
+    <nav class="nav">
+        <a href="#home" class="logo">Friends <span>Mobile Garage</span></a>
+
+        <button class="menu-btn" onclick="toggleMenu()" aria-label="Open menu">
+            ☰
+        </button>
+
+        <div class="nav-links" id="navLinks">
+            <a href="#home">Home</a>
+            <a href="#categories">Categories</a>
+            <a href="#about">About Us</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+</header>
+
+<main>
+
+<section class="hero" id="home">
+    <div class="hero-content">
+        <div class="badge">📱 Your Mobile & Accessories Store</div>
+
+        <h1>
+            Everything You Need,
+            <span>All in One Place.</span>
+        </h1>
+
+        <p>
+            Discover mobile phones, accessories and useful mobile services
+            with a simple and convenient shopping experience.
+        </p>
+
+        <div class="buttons">
+            <a href="#categories" class="btn btn-primary">Explore Categories</a>
+            <a href="#contact" class="btn btn-secondary">Contact Us</a>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="categories">
+    <div class="section-title">
+        <h2>Shop by Category</h2>
+        <p>Explore our range of mobiles and accessories.</p>
+    </div>
+
+    <div class="categories">
+        <a class="category" href="#contact">
+            <div class="category-icon">📱</div>
+            <h3>Mobiles</h3>
+            <p>Smartphones and mobile devices</p>
+        </a>
+
+        <a class="category" href="#contact">
+            <div class="category-icon">🔌</div>
+            <h3>Chargers</h3>
+            <p>Charging solutions and adapters</p>
+        </a>
+
+        <a class="category" href="#contact">
+            <div class="category-icon">🔗</div>
+            <h3>Cables</h3>
+            <p>Reliable charging and data cables</p>
+        </a>
+
+        <a class="category" href="#contact">
+            <div class="category-icon">🎧</div>
+            <h3>Earbuds & Earphones</h3>
+            <p>Audio accessories for everyday use</p>
+        </a>
+
+        <a class="category" href="#contact">
+            <div class="category-icon">🎵</div>
+            <h3>Headphones</h3>
+            <p>Comfortable personal audio</p>
+        </a>
+
+        <a class="category" href="#contact">
+            <div class="category-icon">🔊</div>
+            <h3>Bluetooth Speakers</h3>
+            <p>Portable wireless audio</p>
+        </a>
+
+        <a class="category" href="#contact">
+            <div class="category-icon">🔋</div>
+            <h3>Power Banks</h3>
+            <p>Portable power when you need it</p>
+        </a>
+
+        <a class="category" href="#contact">
+            <div class="category-icon">✂️</div>
+            <h3>Trimmers</h3>
+            <p>Personal grooming accessories</p>
+        </a>
+    </div>
+</section>
+
+<section class="about" id="about">
+    <div class="about-grid">
+        <div>
+            <h2>About Friends Mobile Garage</h2>
+
+            <p>
+                Friends Mobile Garage is designed to make shopping for mobiles
+                and mobile accessories simple, convenient and reliable.
+            </p>
+
+            <p>
+                Our marketplace brings products and services together so
+                customers can discover what they need in one place.
+            </p>
+
+            <div class="feature-list">
+                <div class="feature">✓ Wide range of mobile accessories</div>
+                <div class="feature">✓ Simple and convenient shopping</div>
+                <div class="feature">✓ Customer-focused service</div>
+                <div class="feature">✓ Secure online payment options</div>
+            </div>
+        </div>
+
+        <div class="about-card">
+            <div>
+                <strong>📱</strong>
+                <h3>Mobiles • Accessories • Services</h3>
+                <p>Your convenient mobile marketplace.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="services">
+    <div class="section-title">
+        <h2>Our Services</h2>
+        <p>More than just mobile accessories.</p>
+    </div>
+
+    <div class="services">
+        <div class="service">
+            <div class="service-icon">📱</div>
+            <h3>Mobile Products</h3>
+            <p>
+                Browse mobile phones and related products from available
+                sellers on our marketplace.
+            </p>
+        </div>
+
+        <div class="service">
+            <div class="service-icon">🎧</div>
+            <h3>Mobile Accessories</h3>
+            <p>
+                Find chargers, cables, earbuds, headphones, speakers,
+                power banks and more.
+            </p>
+        </div>
+
+        <div class="service">
+            <div class="service-icon">🔧</div>
+            <h3>Mobile Service</h3>
+            <p>
+                Get information about mobile-related services and support
+                available through our platform.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="cta">
+    <div class="cta-inner">
+        <h2>Looking for Mobile Products?</h2>
+        <p>
+            Explore Friends Mobile Garage and discover mobiles,
+            accessories and services in one convenient place.
+        </p>
+
+        <a href="#contact" class="btn btn-primary">Get in Touch</a>
+    </div>
+</section>
+
+<section class="section" id="contact">
+    <div class="section-title">
+        <h2>Contact Us</h2>
+        <p>We are here to help.</p>
+    </div>
+
+    <div class="contact">
+        <div class="contact-card">
+            <h3>Friends Mobile Garage</h3>
+
+            <!-- Replace these placeholders with your real details later -->
+            <div class="contact-item">
+                📍 <strong>Location:</strong> YOUR_CITY, ANDHRA PRADESH, INDIA
+            </div>
+
+            <div class="contact-item">
+                📞 <strong>Phone:</strong> YOUR_PHONE_NUMBER
+            </div>
+
+            <div class="contact-item">
+                ✉️ <strong>Email:</strong> YOUR_EMAIL_ADDRESS
+            </div>
+        </div>
+
+        <div class="contact-card">
+            <h3>Business Information</h3>
+
+            <div class="contact-item">
+                🛒 <strong>Business:</strong> Mobiles & Accessories Marketplace
+            </div>
+
+            <div class="contact-item">
+                💳 <strong>Payments:</strong> Online Payment & Cash on Delivery
+            </div>
+
+            <div class="contact-item">
+                🚚 <strong>Delivery:</strong> Product delivery available as per
+                applicable service areas
+            </div>
+        </div>
+    </div>
+</section>
+
+</main>
+
+<footer>
+    <div class="footer-grid">
+
+        <div>
+            <h3>Friends Mobile Garage</h3>
+            <p>
+                Mobiles, accessories and services — all in one convenient
+                marketplace.
+            </p>
+        </div>
+
+        <div>
+            <h4>Quick Links</h4>
+            <div class="footer-links">
+                <a href="#home">Home</a>
+                <a href="#categories">Categories</a>
+                <a href="#about">About Us</a>
+                <a href="#services">Services</a>
+                <a href="#contact">Contact Us</a>
+            </div>
+        </div>
+
+        <div>
+            <h4>Legal</h4>
+            <div class="footer-links">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms & Conditions</a>
+                <a href="refund-policy.html">Refund & Cancellation</a>
+                <a href="shipping-policy.html">Shipping Policy</a>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="copyright">
+        © 2026 Friends Mobile Garage. All rights reserved.
+    </div>
+</footer>
+
+<script>
+    function toggleMenu() {
+        document.getElementById("navLinks").classList.toggle("active");
+    }
+
+    document.querySelectorAll(".nav-links a").forEach(function(link) {
+        link.addEventListener("click", function() {
+            document.getElementById("navLinks").classList.remove("active");
+        });
+    });
+</script>
+
+</body>
+</html>
